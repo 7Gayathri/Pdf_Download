@@ -1,0 +1,223 @@
+<!--
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>PDF Document</title>
+    
+</head>
+<body>
+    <h1 th:text="${title}">Hello World</h1>
+    <p th:text="${content}">This is a sample PDF content.</p>
+</body>
+</html>
+-->
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	
+
+<head>
+    <title>Receipt Document</title>
+	<meta charset="UTF-8"/>
+    <meta name='viewport' content='width=device-width, initial-scale=1' />
+    <script src="https://kit.fontawesome.com/6d5dd140ae.js" crossorigin="anonymous"></script>
+    <style>
+        input[type=number]::-webkit-inner-spin-button,
+        input[type=number]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            margin: 0;
+        }
+
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        .tableHead {
+            width: 150px;
+            background-color: orange;
+
+        }
+
+        .tableData {
+            width: 200px;
+        }
+
+        td,
+        th {
+            border: 1px solid black;
+            text-align: left;
+            padding: 3px 3px 3px 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <main style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+
+        <div
+            style='width: 80%; height: 550px; background-color: rgba(246, 211, 146, 0.5); border: 1px solid black; padding: 20px;'>
+            <div>
+                <div style="display: flex; justify-content: center;">
+                    <img style="width: 300px;"
+                        src="C:\Users\lenovo\Desktop\Templete_HTML_CSS\receipt\login360_logo-Photoroom.png"
+                        alt="Logo" />
+                </div>
+                <div style="display: flex; justify-content: center;">
+                    <p style="margin: 0px; font-weight: bold; text-decoration: underline;">RECEIPT</p>
+                </div>
+            </div>
+            <div style="display: flex;">
+                <div style="width: 50%; height: 110px; padding: 20px;">
+                    <form>
+                        <label class="labelName" for="bnumber">Bill Number<span style="margin-left: 75px;">:</span>
+                            12345</label><br />
+                        <label class="labelName" for="date_timepicker_end">Current Date<span
+                                style="margin-left: 72px;">:</span> 31-Aug-2024</label><br />
+                        <label class="labelName" for="cname">Customer Name<span style="margin-left: 51px;">:</span>
+                            Imza</label><br />
+                        <label class="labelName" for="fname">Father's Name<span style="margin-left: 63px;">:</span>
+                            Yasar</label><br />
+                        <label class="labelName" for="vehicle1">Branch<span style="margin-left: 109px;">:</span></label>
+                        <input type="checkbox" id="branch1" name="branch1" />
+                        <label class="labelName" for="branch1">Chennai</label>
+                        <input type="checkbox" id="branch2" name="branch2" />
+                        <label for="branch2">Coimbatore</label><br />
+                        <label class="labelName" for="fname">Course Title<span style="margin-left: 76px;">:</span>
+                            Front-end</label>
+                    </form>
+                </div>
+                <div style="width: 50%; height: 110px; padding: 20px;">
+                    <div>
+                        <form style="display: flex; align-items: center; justify-content: space-evenly;">
+                            <input type="checkbox" id="penrol" name="penrol" />
+                            <label for="penrol"> Pre-Enrolment</label><br />
+                            <input type="checkbox" id="course" name="course" />
+                            <label for="course"> Course/Time Swap</label><br />
+                            <input type="checkbox" id="intern" name="intern" />
+                            <label for="intern"> Internship</label><br />
+                            <input type="checkbox" id="others" name="others" />
+                            <label for="others"> Others</label><br /><br />
+                        </form>
+                    </div>
+                    <form>
+                        <label for="qualify">Qualification<span style="margin-left: 102px;">:</span> B.Sc</label><br />
+                        <label for="cnumber">Contact Number<span style="margin-left: 80px;">:</span>
+                            +91-9XXXXXXXXX</label><br />
+                        <label for="wnumber">What's App Number<span style="margin-left: 55px;">:</span>
+                            +91-9XXXXXXXXX</label><br />
+                        <label for="btime">Batch Timing<span style="margin-left: 99px;">:</span>
+                            9:00AM-11:00AM</label><br />
+                    </form>
+
+                </div>
+
+            </div>
+            <div>
+                <table>
+                    <tr>
+                        <th class="tableHead">Total Amount</th>
+                        <td class="tableData"></td>
+                        <th class="tableHead">TranSaction ID</th>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th class="tableHead">Amount Paid</th>
+                        <td class="tableData"></td>
+                        <th class="tableHead">In-Words</th>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th class="tableHead">Pending Amount</th>
+                        <td class="tableData"></td>
+                        <th class="tableHead">Due date</th>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th class="tableHead">Payment Mode </th>
+                        <td colspan="3">
+                            <div>
+                                <form style=' display: flex; column-gap: 20px;'>
+                                    <div>
+                                        <input type="checkbox" id="penrol" name="penrol" />
+                                        <label for="penrol"> UPI</label>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox" id="course" name="course" />
+                                        <label for="course"> CARD</label>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox" id="intern" name="intern" />
+                                        <label for="intern"> Gpay/PhonePe</label>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox" id="baccount" name="baccount" />
+                                        <label for="baccount"> Business ACC</label>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox" id="nbank" name="nbank" />
+                                        <label for="nbank"> Net Banking</label>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox" id="cash" name="cash" />
+                                        <label for="cash"> CASH</label>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox" id="others" name="others" />
+                                        <label for="others"> Others</label>
+                                    </div>
+                                </form>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div style="display: flex; justify-content: center;">
+                <p style=" font-weight: bold; text-decoration: underline;">TERMS OF SERVICE</p>
+            </div>
+            <div>
+                <p style="margin: 0px;">* Your seat will be secured for 7 days upon pre-enrollment. It cannot be held
+                    beyond this period.</p>
+
+                <p style="margin: 0px;">* Candidates must complete payment of the remaining fees within 5 day of
+                    enrollment.</p>
+
+                <p style="margin: 0px;">* Course swaps and time swaps depend on availability, by paying 30% of your
+                    course fee and must be request
+                    within 10 days of enrollment.</p>
+
+                <p style="margin: 0px;">* Pre-payment is non-refundable, acknowledging the commitment of time and
+                    resources by Login360.</p>
+
+                <p style="margin: 0px;">*<span style="font-weight: bold;"> Force Majeure:</span> Act of god, inevitatile
+                    accident, natural causes like fire, storms, floods, governmental
+                    or societal actions such as war, civil unrest, labor strikes, infrastructure.</p>
+            </div>
+            <div style="display: flex; justify-content: space-between;">
+                <div>
+                    <h3>Signature of the Student</h3>
+                </div>
+                <div>
+                    <h3>Signature of Login360</h3>
+                </div>
+            </div>
+        </div>
+        <div style='width: 80%; height: 80px; background-color: orange; border: 1px solid black; padding: 10px 20px; '>
+            <div style="display: flex; justify-content: space-evenly; font-weight: bold;">
+                <p><i class='fas fa-phone'></i> +91-9363976837</p>
+                <p><i class='far fa-envelope-open'></i> hr@login360.in</p>
+                <p><i class="fa fa-globe"></i> www.login360.in</p>
+            </div>
+            <div style="text-align: center;">
+                <p style="margin: 0px; font-weight: bold;">No.6,Ground Floor, Main Road, Vijaya Nagar, Velachery, Chennai - 600042</p>
+            </div>
+        </div>
+
+    </main>
+</body>
+
+</html>
